@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:LeSocket/LeSocket.xcodeproj">
+      location = "group:LeSocketDemo/LeSocketDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:LeSocketLibrary/LeSocketLibrary.xcodeproj">
    </FileRef>
 </Workspace>

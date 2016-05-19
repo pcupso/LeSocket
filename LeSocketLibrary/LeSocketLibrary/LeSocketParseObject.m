@@ -8,6 +8,47 @@
 
 #import "LeSocketParseObject.h"
 
-@implementation LeSocketParseObject
+@implementation LeSocketCreateSocketParseObject
+
+@end
+
+
+
+@implementation LeSocketCertainSocketCloseParseObject
+
+@end
+
+
+
+@implementation LeSocketDataRecvParseObject
+
+- (instancetype)initWithParaData:(Byte *)lpData dataSize:(unsigned int)uDataSize
+{
+    if (self = [super init]) {
+        if (lpData) {
+            mData = (Byte *)malloc(uDataSize);
+            memcpy(mData, lpData, uDataSize)
+            mDataSize = uDataSize;
+        }
+    }
+}
+
+- (void)dealloc
+{
+    if (!mData) {
+        free(mData);
+        mData = nil;
+    }
+}
+
+- (Byte *)getDataVal
+{
+    return mData;
+}
+
+- (unsigned int)getDataSizeVal
+{
+    return mDataSize;
+}
 
 @end

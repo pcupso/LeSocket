@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LeSocket.h"
+
+#define LeSocketSDK    [LeSocketLibrary sharedInstace]
 
 @interface LeSocketLibrary : NSObject
+
++ (instancetype) sharedInstace;
+
+- (LeSocket *)createSocket;
 
 @end
