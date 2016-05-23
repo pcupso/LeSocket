@@ -9,12 +9,15 @@
 #import <Foundation/Foundation.h>
 #import "LeSocketBaseObject.h"
 
+
+
 #define MAXCONNECTION_TCPSERVERCANACCEPT    FD_SETSIZE
 
 typedef NS_ENUM(NSInteger, RecordStatus) {
     kRecordStatusIdle = 0,
     kRecordStatusBusy,
 };
+
 
 typedef struct _tagStructExtLeSocketAbout
 {
@@ -66,7 +69,6 @@ typedef struct _tagStructExtLeSocketAbout
 - (int)closeCertainSocket;
 - (int)socketBeginToWork;
 
-- (void)doActionInit;
 
 - (int)connectToServer;
 - (void)runConnectToServer;

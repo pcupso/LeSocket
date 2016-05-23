@@ -24,13 +24,16 @@
 
 - (instancetype)initWithParaData:(Byte *)lpData dataSize:(unsigned int)uDataSize
 {
-    if (self = [super init]) {
-        if (lpData) {
+    if (self = [super init])
+    {
+        if (lpData != nil)
+        {
             mData = (Byte *)malloc(uDataSize);
-            memcpy(mData, lpData, uDataSize)
+            memcpy(mData, lpData, uDataSize);
             mDataSize = uDataSize;
         }
     }
+    return self;
 }
 
 - (void)dealloc
