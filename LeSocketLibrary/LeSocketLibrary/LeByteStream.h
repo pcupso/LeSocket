@@ -20,7 +20,7 @@
 @property (nonatomic, assign) unsigned int curPos;
 
 
-- (instancetype)initWithString:(NSString *)str isNetOrder:(BOOL)bIsNetOrder;
+- (instancetype)initWithBuff:(Byte *)lpData isNetOrder:(BOOL)bIsNetOrder;
 - (instancetype)initWithSize:(unsigned int)nBufSize isNetOrder:(BOOL)bIsNetOrder;
 
 -(void)readBytes:(Byte *)pData dataSize:(unsigned int)nDataSize;

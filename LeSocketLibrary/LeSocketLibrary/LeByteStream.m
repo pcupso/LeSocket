@@ -10,14 +10,11 @@
 
 @implementation LeByteStream
 
-- (instancetype)initWithString:(NSString *)str isNetOrder:(BOOL)bIsNetOrder
+- (instancetype)initWithBuff:(Byte *)lpData isNetOrder:(BOOL)bIsNetOrder
 {
-    NSAssert([str length] != 0, @"string can't be nil!");
-    
     if (self == [super init])
     {
-        NSData *bytes = [str dataUsingEncoding:NSUTF8StringEncoding];
-        m_pBuf = (Byte *)[bytes bytes];
+        m_pBuf = lpData;
         m_bNetOrder = bIsNetOrder;
         m_bManaged = NO;
         m_nMaxSize = 0;

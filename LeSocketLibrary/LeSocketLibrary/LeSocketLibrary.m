@@ -21,11 +21,28 @@
     
 }
 
-- (LeSocket *)createSocket
+- (LeSocketManager *)createSocketWithServerAddr:(NSString *)serverAddr
+                                     serverPort:(int)serverPort
+                                  dataRecvBlock:(LSDataRecvBlock)dataRecvBlock
+                         connStatusChangedBlock:(LSConnStatusChangedBlock)connStatusChangedBlock
+                             sendDataErrorBlock:(LSSendDataErrorBlock)sendDataErrBlock
 {
-    return [[LeSocket alloc] init];
+    mSocketManager = [[LeSocketManager alloc] createClientWithAddr:serverAddr
+                                                        serverPort:serverPort
+                                                     dataRecvBlock:dataRecvBlock
+                                            connStatusChangedBlock:connStatusChangedBlock sendDataErrorBlock:sendDataErrBlock];
+    return mSocketManager;
 }
 
+
+- (void)sendData:(int)nPDUType
+        dataBody:(Byte *)lpData
+        dataSize:(unsigned int)uDataSize
+{
+    if (mSocketManager) {
+        [mSocketManager sendData:nPDUType dataBody:lpData dataSize:uDataSize];
+    }
+}
 
 
 @end

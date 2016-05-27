@@ -621,7 +621,7 @@
     
     [m_LockSendData lock];
     
-    while ((uTotalSend <    uDataSize) && uDataSizeSend > 0)
+    while ((uTotalSend < uDataSize) && uDataSizeSend > 0)
     {
         int nRet = (int)send(pStructLeSocketAbout->hSocket, (char *)(lpData + uTotalSend), (size_t)uDataSizeSend, 0);
         
